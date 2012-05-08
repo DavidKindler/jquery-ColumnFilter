@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery.ColumnFilter.js demo page</title>
+<style>
+table {width:700px; }
+#wrapper {width:800px; padding-left:10px;}
+
+.even1 {background-color:#FF9;}
+.odd1 {background-color:#999999; color:#FFFF99;}
+
+.even2 {background-color:#99CCCC;}
+.odd2 {background-color:#CCCCCC;}
+
+
+</style>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("jquery", "1.7.1");
+</script>
+<script type="text/javascript" src="jquery.ColumnFilter.min.js"></script>
+
+<script>
+$(document).ready(function(e) {
+	
+
+    $('#table0').ColumnFilter();
+	$('#table1').ColumnFilter({'alternateRowClassNames':["even1","odd1"] });	
+	$('#table2').ColumnFilter({'alternateRowClassNames':["even2","odd2"] });
+	
+});
+</script>
+</head>
+
+<body>
+<h1>jQuery.ColumnFilter.js  - Demo page</h1>
+<div id="wrapper">
+<h2>Example 1</h2>
+
+<pre>$('#table0').ColumnFilter();</pre>
+<table id="table0">
+<thead>
+
+            <tr>
+                <th >Name</th>
+                <th >Country</th>
+                <th>Age</th>
+                <th >Sex</th>
+                <th>City</th>
+            </tr>
+</thead>
+<tbody>
+            <tr>
+                <td>John</td>
+                <td>United States</td>
+                <td>23</td>
+                <td>Male</td>
+                <td>Houston</td>
+            </tr>
+            <tr>
+                <td>David</td>
+                <td>United States</td>
+                <td>54</td>
+                <td>Male</td>
+                <td>Miami</td>
+            </tr>
+            <tr>
+                <td>Jose</td>
+                <td>Argentina</td>
+                <td>32</td>
+                <td>Male</td>
+                <td>Diadro</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Italy</td>
+                <td>21</td>
+                <td>Female</td>
+                <td>Venice</td>
+            </tr>
+            <tr>
+                <td>Carol</td>
+                <td>United States</td>
+                <td>24</td>
+                <td>Female</td>
+                <td>New York</td>
+            </tr>
+    </tbody>
+  </table>
+      
+      <br>
+      <hr>
+      <br>  
+<h2>Example 2</h2>
+
+<pre>$('#table1').ColumnFilter({'alternateRowClassNames':["even1","odd1"] });<br>  
+  &lt;thead&gt;&lt;tr&gt;<br>  &lt;th filter-type=&quot;none&quot;&gt;Name&lt;/th&gt;<br>  &lt;th filter-type=&quot;ddl&quot;&gt;Country&lt;/th&gt;<br>  &lt;th&gt;Age&lt;/th&gt;<br>  &lt;th &gt;Sex&lt;/th&gt;<br>  &lt;th&gt;City&lt;/th&gt;<br>  &lt;/tr&gt; &lt;/thead&gt;</pre>
+
+<table id="table1">
+<thead>
+
+            <tr>
+                <th filter-type="none">Name</th>
+                <th filter-type="ddl">Country</th>
+                <th>Age</th>
+                <th >Sex</th>
+                <th>City</th>
+            </tr>
+</thead>
+<tbody>
+            <tr>
+                <td>John</td>
+                <td>United States</td>
+                <td>23</td>
+                <td>Male</td>
+                <td>Houston</td>
+            </tr>
+            <tr>
+                <td>David</td>
+                <td>United States</td>
+                <td>54</td>
+                <td>Male</td>
+                <td>Miami</td>
+            </tr>
+            <tr>
+                <td>Jose</td>
+                <td>Argentina</td>
+                <td>32</td>
+                <td>Male</td>
+                <td>Diadro</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Italy</td>
+                <td>21</td>
+                <td>Female</td>
+                <td>Venice</td>
+            </tr>
+            <tr>
+                <td>Carol</td>
+                <td>United States</td>
+                <td>24</td>
+                <td>Female</td>
+                <td>New York</td>
+            </tr>
+    </tbody>
+  </table>
+      
+      <br>
+      <hr>
+      <br>  
+        
+<h2>Example 3</h2>
+
+<pre>
+  $('#table2').ColumnFilter({'alternateRowClassNames':["even2","odd2"] });
+ 
+  &lt;thead&gt;&lt;tr&gt;
+  &lt;th&gt;Title&lt;/th&gt;
+  &lt;th filter-type=&quot;none&quot;&gt;Author&lt;/th&gt;
+  &lt;th filter-type=&quot;ddl&quot;&gt;Publisher&lt;/th&gt;
+  &lt;th filter-type=&quot;ddl&quot;&gt;Format&lt;/th&gt;
+  &lt;th &gt;Price&lt;/th&gt;
+  &lt;/tr&gt;&lt;/thead&gt;</pre>
+
+       <table id="table2">
+<thead>
+
+            <tr>
+                <th>Title</th>
+                <th filter-type="none">Author</th>
+                <th filter-type="ddl">Publisher</th>
+                <th filter-type="ddl">Format</th>
+                <th >Price</th>
+            </tr>
+</thead>
+<tbody>
+            <tr>
+                <td>The Circus Ship</td>
+                <td>Chris Van Dusen</td>
+                <td>Candlewick</td>
+                <td>Hardcover</td>
+                <td>$10.38</td>
+            </tr>
+            <tr>
+                <td>The Circus Ship</td>
+                <td>Chris Van Dusen</td>
+                <td>Candlewick</td>
+                <td>Kindle</td>
+                <td>$9.86</td>
+            </tr>
+            <tr>
+                <td>Hooray for Fish!</td>
+                <td>Lucy Cousins</td>
+                <td>Candlewick</td>
+                <td>Paperback</td>
+                <td>$9.99</td>
+            </tr>
+            <tr>
+                <td>The Red Book</td>
+                <td>Barbara Lehman</td>
+                <td>Houghton Miffin</td>
+                <td>Kindle </td>
+                <td>$9.68</td>
+            </tr>
+            <tr>
+                <td>Art &amp; Max</td>
+                <td>David Weisner</td>
+                <td>Clarion Books</td>
+                <td>Kindle</td>
+                <td>$11.62</td>
+            </tr>
+            <tr>
+                <td>Curious George's First Day of School</td>
+                <td>HA Rey</td>
+                <td>HMH Books</td>
+                <td>Paperback</td>
+                <td><p>$3.95</p></td>
+            </tr>
+            </tbody>
+        </table>
+        
+</div> 
+</body>
+</html>
